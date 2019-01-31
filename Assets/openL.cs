@@ -19,7 +19,7 @@ public class openL : MonoBehaviour
             transform.Rotate(Vector3.forward * -90);
             open = true;
         }
-        else if(Input.GetKeyDown(KeyCode.Space) && open)
+        else if(Input.GetKeyUp(KeyCode.Space) && open)
         {
             transform.Rotate(Vector3.forward * 90);
             open = false;

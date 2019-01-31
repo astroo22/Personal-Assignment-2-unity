@@ -24,7 +24,7 @@ public class openR : MonoBehaviour
             open = true;
             Instantiate(rock, playerPos, Quaternion.identity);
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && open == true)
+        else if (Input.GetKeyUp(KeyCode.Space) && open == true)
         {
             transform.Rotate(Vector3.forward * -90);
             open = false;

@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a4007504655044e85e5084d12b2226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 2.5
 --- !u!4 &363911575
 Transform:
   m_ObjectHideFlags: 0
@@ -833,6 +833,11 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 394742793073354487, guid: dc92982cc155c9f4d91a9c715ead9dbc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc92982cc155c9f4d91a9c715ead9dbc, type: 3}
 --- !u!1001 &2505613813497479964
@@ -930,7 +935,7 @@ PrefabInstance:
     - target: {fileID: 2661789038102306590, guid: ec662fa7790f8054a854fc333a8c79c7,
         type: 3}
       propertyPath: m_CollisionDetection
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2661789038102306590, guid: ec662fa7790f8054a854fc333a8c79c7,
         type: 3}
@@ -940,17 +945,22 @@ PrefabInstance:
     - target: {fileID: 2661789038102306590, guid: ec662fa7790f8054a854fc333a8c79c7,
         type: 3}
       propertyPath: m_Mass
-      value: 5000
+      value: 0.28387612
       objectReference: {fileID: 0}
     - target: {fileID: 2661789038102306590, guid: ec662fa7790f8054a854fc333a8c79c7,
         type: 3}
       propertyPath: m_UseAutoMass
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2661789038102306590, guid: ec662fa7790f8054a854fc333a8c79c7,
         type: 3}
       propertyPath: m_GravityScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2661789038102306590, guid: ec662fa7790f8054a854fc333a8c79c7,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2505613812838292960, guid: ec662fa7790f8054a854fc333a8c79c7,
         type: 3}
@@ -1026,6 +1036,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8466119323137185581, guid: 5cb78060af1341143b4551629ee1f9d6,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8466119323137185581, guid: 5cb78060af1341143b4551629ee1f9d6,
+        type: 3}
+      propertyPath: m_UseAutoMass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8466119323137185581, guid: 5cb78060af1341143b4551629ee1f9d6,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.22414011
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cb78060af1341143b4551629ee1f9d6, type: 3}

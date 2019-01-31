@@ -5,6 +5,7 @@ using UnityEngine;
 public class rockInteractions : MonoBehaviour
 {
     private Rigidbody2D rigidBody;
+    private bool test = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +17,11 @@ public class rockInteractions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && !test)
         {
             rigidBody.gravityScale = 1.0f;
             transform.parent = null;
+            test = true;
         }
     }
 }
