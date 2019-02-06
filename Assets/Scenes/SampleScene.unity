@@ -768,6 +768,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Femalevictum
       objectReference: {fileID: 0}
+    - target: {fileID: 394742793073354250, guid: dc92982cc155c9f4d91a9c715ead9dbc,
+        type: 3}
+      propertyPath: m_TagString
+      value: vict
+      objectReference: {fileID: 0}
     - target: {fileID: 394742793073354484, guid: dc92982cc155c9f4d91a9c715ead9dbc,
         type: 3}
       propertyPath: m_LocalPosition.x

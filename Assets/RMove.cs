@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class RMove : MonoBehaviour
 {
-    public float speed = 1.5f;
+    public float speed = 10.5f;
     private bool isup = false;
     private float nextActionTime = 0.0f;
-    public float period = 3.1f;
+    public float period = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,29 +21,53 @@ public class RMove : MonoBehaviour
     {
        
         Vector3 Vict = transform.position;
+      
 
         if (Time.time > nextActionTime)
         {
             nextActionTime += period;
-            if(!isup)
+            
+            if (!isup)
             {
-                while(transform.position.y != 0)
-                {
-                    transform.position += Vector3.up * speed * Time.deltaTime;
-                }
-                isup = true;
+                moveup();
+              
             }
             else
             {
-                while (transform.position.y != -5)
-                {
-                    transform.position += Vector3.down * speed * Time.deltaTime;
-                }
-                isup = false;
+                movedown();
             }
-            
-
         }
-        transform.position += Vector3.down * speed * Time.deltaTime;
+    }
+    public void moveup()
+    {
+        Debug.Log("Move up");
+        if (transform.position.y > -3.56')
+        {
+            for(int i =0; i<10;i++)
+            {
+                transform.position += Vector3.up * speed * Time.deltaTime;
+            }
+            Debug.Log("hit moveUP transform happened");
+        }
+        if(transform.position.y >=0)
+        {
+            isup = true;
+        }
+        
+        
+    }
+    public void movedown()
+    {
+        Debug.Log("Move down");
+        if (transform.position.y <= -3)
+        {
+            transform.position += Vector3.down * speed * Time.deltaTime;
+            Debug.Log("hit moveDown transform happened");
+        }
+        if (transform.position.y <=-5)
+        {
+            isup = true;
+        }
+        
     }
 }
