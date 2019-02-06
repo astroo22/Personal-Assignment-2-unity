@@ -5,68 +5,67 @@ using UnityEngine;
 
 public class RMove : MonoBehaviour
 {
-    public float speed = 10.5f;
+    public float speed = 2.5f;
     private bool isup = false;
     private float nextActionTime = 0.0f;
-    public float period = 0.5f;
-
+    public float period = 3.0f;
+    private bool moveUP = false;
+    private bool moveDOWN = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Vector3 Vict = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-        Vector3 Vict = transform.position;
-      
-
+        if(moveUP)
+        {
+            moveup();
+        }
+        if(moveDOWN)
+        {
+            movedown();
+        }
         if (Time.time > nextActionTime)
         {
             nextActionTime += period;
             
             if (!isup)
             {
-                moveup();
-              
+                moveUP = true;
+                moveDOWN = false;
             }
             else
             {
-                movedown();
+                moveUP = false;
+                moveDOWN = true;
             }
         }
     }
     public void moveup()
     {
         Debug.Log("Move up");
-        if (transform.position.y > -3.56')
+        if (transform.position.y < -3.56)
         {
-            for(int i =0; i<10;i++)
-            {
-                transform.position += Vector3.up * speed * Time.deltaTime;
-            }
-            Debug.Log("hit moveUP transform happened");
+            transform.position += Vector3.up * speed * Time.deltaTime;
         }
-        if(transform.position.y >=0)
+        else
         {
             isup = true;
         }
-        
-        
     }
     public void movedown()
     {
-        Debug.Log("Move down");
-        if (transform.position.y <= -3)
+        if (transform.position.y > -4.30)
         {
             transform.position += Vector3.down * speed * Time.deltaTime;
-            Debug.Log("hit moveDown transform happened");
         }
-        if (transform.position.y <=-5)
+        else
         {
-            isup = true;
+            isup = false;
+            transform.position = new Vector3(Random.Range(-7.0f,7.0F), -4.11f,0);
         }
         
     }

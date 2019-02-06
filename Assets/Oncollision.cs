@@ -5,6 +5,7 @@ using UnityEngine;
 public class Oncollision : MonoBehaviour
 {
     public AudioSource scream;
+    public HUDScript hudCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,8 @@ public class Oncollision : MonoBehaviour
         if(collision.gameObject.tag =="Rock")
         {
             scream = GetComponent<AudioSource>();
-            scream.Play();
+            //scream.Play();
+            //hudCanvas.IncrimentScore();
         }
         
     }
