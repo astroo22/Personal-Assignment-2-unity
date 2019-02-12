@@ -14,12 +14,12 @@ public class openL : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !open)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetAxisRaw("Drop") == 1) && !open)
         {
             transform.Rotate(Vector3.forward * -90);
             open = true;
         }
-        else if(Input.GetKeyUp(KeyCode.Space) && open)
+        else if((Input.GetKeyUp(KeyCode.Space) || Input.GetAxisRaw("Drop") == 0) && open)
         {
             transform.Rotate(Vector3.forward * 90);
             open = false;

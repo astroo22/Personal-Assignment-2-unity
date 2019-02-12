@@ -18,13 +18,13 @@ public class openR : MonoBehaviour
     void Update()
     {
         Vector3 playerPos = transform.position;
-        if (Input.GetKeyDown(KeyCode.Space) && !open)
+        if ((Input.GetKeyDown(KeyCode.Space)||Input.GetAxisRaw("Drop") == 1) && !open)
         {
             transform.Rotate(Vector3.forward * 90);
             open = true;
             Instantiate(rock, playerPos, Quaternion.identity);
         }
-        else if (Input.GetKeyUp(KeyCode.Space) && open == true)
+        else if ((Input.GetKeyUp(KeyCode.Space) || Input.GetAxisRaw("Drop") == 0) && open == true)
         {
             transform.Rotate(Vector3.forward * -90);
             open = false;
