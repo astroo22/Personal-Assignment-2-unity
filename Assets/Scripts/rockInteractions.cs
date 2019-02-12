@@ -7,15 +7,19 @@ public class rockInteractions : MonoBehaviour
     private Rigidbody2D rigidBody;
     private bool test = false;
     private bool scored = false;
+    private ScoreControl sc;
     public AudioSource scream;
-    public HUDScript hudCanvas;
+    public GameObject score;
+    private HUDScript hs;
+    //public HUDScript hudCanvas;
     // Start is called before the first frame update
     void Start()
     {
-
+        hs = GameObject.Find("obvious").GetComponent<HUDScript>();
         rigidBody = this.GetComponent<Rigidbody2D>();
         rigidBody.gravityScale = 1.0f;
         GetComponent<AudioSource>().playOnAwake = false;
+        sc = score.GetComponent<ScoreControl>();
     }
 
     // Update is called once per frame
@@ -34,7 +38,8 @@ public class rockInteractions : MonoBehaviour
         {
             scream = GetComponent<AudioSource>();
             scream.Play();
-            hudCanvas.IncrimentScore();
+            //hudCanvas.IncrimentScore();
+            hs.IncrimentScore();
             scored = true;
         }
     }
